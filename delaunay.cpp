@@ -222,7 +222,7 @@ int main(int argc, char *argv[])
 	cout << "Number of points: " << num_points << endl;
 	cout << "Generating points..." << endl;
     xyzs = generate_xyzs(num_points);
-    int thread_numbers[] = {1, 2, 4};
+    int thread_numbers[] = {1, 2, 3, 4};
 	for (int i = 0; i < sizeof(thread_numbers) / sizeof(thread_numbers[0]); ++i) {
 		int num_thread = thread_numbers[i];
 		int num_jobs = 0;
@@ -240,7 +240,7 @@ int main(int argc, char *argv[])
 			(end_time - start_time).count();
 		cout << "Finished." << endl;
 		time /= num_repeat;
-		cout << "No Sort Execution Time: " << time << endl;
+		cout << "Execution Time: " << time << endl;
 		cout << "Number of points per second: " << num_points / time << endl;
 		cout << "Number of jobs per second: " << num_jobs / time / num_repeat << endl;
 	}
